@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0549512D1E8A0313009E4DEC /* pa.png in Resources */ = {isa = PBXBuildFile; fileRef = 0549512C1E8A0313009E4DEC /* pa.png */; };
+		05526C7C1E8B343E00A022DF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05526C7B1E8B343E00A022DF /* SwiftyJSON.framework */; };
+		05526C7D1E8B343E00A022DF /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 05526C7B1E8B343E00A022DF /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		05852DB31E88A5880040AB96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05852DB21E88A5880040AB96 /* AppDelegate.swift */; };
 		05852DB51E88A5880040AB96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05852DB41E88A5880040AB96 /* ViewController.swift */; };
 		05852DB81E88A5880040AB96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05852DB61E88A5880040AB96 /* Main.storyboard */; };
@@ -14,6 +17,8 @@
 		05852DBD1E88A5880040AB96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05852DBB1E88A5880040AB96 /* LaunchScreen.storyboard */; };
 		05852DC81E88A5880040AB96 /* AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05852DC71E88A5880040AB96 /* AITests.swift */; };
 		05852DD31E88A5890040AB96 /* AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05852DD21E88A5890040AB96 /* AIUITests.swift */; };
+		05852DE31E88A85E0040AB96 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05852DE11E88A85E0040AB96 /* RestKit.framework */; };
+		05852DE41E88A85E0040AB96 /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05852DE21E88A85E0040AB96 /* TextToSpeechV1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +38,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		05526C7E1E8B343E00A022DF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				05526C7D1E8B343E00A022DF /* SwiftyJSON.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0549512C1E8A0313009E4DEC /* pa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pa.png; sourceTree = "<group>"; };
+		05526C7B1E8B343E00A022DF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		05852DAF1E88A5880040AB96 /* AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05852DB21E88A5880040AB96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05852DB41E88A5880040AB96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +68,8 @@
 		05852DCE1E88A5890040AB96 /* AIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05852DD21E88A5890040AB96 /* AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIUITests.swift; sourceTree = "<group>"; };
 		05852DD41E88A5890040AB96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05852DE11E88A85E0040AB96 /* RestKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestKit.framework; path = Carthage/Build/iOS/RestKit.framework; sourceTree = "<group>"; };
+		05852DE21E88A85E0040AB96 /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextToSpeechV1.framework; path = Carthage/Build/iOS/TextToSpeechV1.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +77,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05852DE31E88A85E0040AB96 /* RestKit.framework in Frameworks */,
+				05852DE41E88A85E0040AB96 /* TextToSpeechV1.framework in Frameworks */,
+				05526C7C1E8B343E00A022DF /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +103,12 @@
 		05852DA61E88A5880040AB96 = {
 			isa = PBXGroup;
 			children = (
+				05526C7B1E8B343E00A022DF /* SwiftyJSON.framework */,
 				05852DB11E88A5880040AB96 /* AI */,
 				05852DC61E88A5880040AB96 /* AITests */,
 				05852DD11E88A5890040AB96 /* AIUITests */,
 				05852DB01E88A5880040AB96 /* Products */,
+				05852DE01E88A85D0040AB96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +125,7 @@
 		05852DB11E88A5880040AB96 /* AI */ = {
 			isa = PBXGroup;
 			children = (
+				0549512C1E8A0313009E4DEC /* pa.png */,
 				05852DB21E88A5880040AB96 /* AppDelegate.swift */,
 				05852DB41E88A5880040AB96 /* ViewController.swift */,
 				05852DB61E88A5880040AB96 /* Main.storyboard */,
@@ -125,6 +154,15 @@
 			path = AIUITests;
 			sourceTree = "<group>";
 		};
+		05852DE01E88A85D0040AB96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05852DE11E88A85E0040AB96 /* RestKit.framework */,
+				05852DE21E88A85E0040AB96 /* TextToSpeechV1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +173,8 @@
 				05852DAB1E88A5880040AB96 /* Sources */,
 				05852DAC1E88A5880040AB96 /* Frameworks */,
 				05852DAD1E88A5880040AB96 /* Resources */,
+				05852DE51E88A8920040AB96 /* ShellScript */,
+				05526C7E1E8B343E00A022DF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +233,7 @@
 				TargetAttributes = {
 					05852DAE1E88A5880040AB96 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CR32WVALWW;
 						ProvisioningStyle = Automatic;
 					};
 					05852DC21E88A5880040AB96 = {
@@ -232,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0549512D1E8A0313009E4DEC /* pa.png in Resources */,
 				05852DBD1E88A5880040AB96 /* LaunchScreen.storyboard in Resources */,
 				05852DBA1E88A5880040AB96 /* Assets.xcassets in Resources */,
 				05852DB81E88A5880040AB96 /* Main.storyboard in Resources */,
@@ -253,6 +295,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05852DE51E88A8920040AB96 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/TextToSpeechV1.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RestKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05852DAB1E88A5880040AB96 /* Sources */ = {
@@ -412,6 +472,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CR32WVALWW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lifeistech.AI;
@@ -424,6 +489,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CR32WVALWW;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lifeistech.AI;
@@ -505,6 +575,7 @@
 				05852DD91E88A5890040AB96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05852DDA1E88A5890040AB96 /* Build configuration list for PBXNativeTarget "AITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +584,7 @@
 				05852DDC1E88A5890040AB96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05852DDD1E88A5890040AB96 /* Build configuration list for PBXNativeTarget "AIUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +593,7 @@
 				05852DDF1E88A5890040AB96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

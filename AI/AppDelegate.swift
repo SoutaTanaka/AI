@@ -7,6 +7,16 @@
 //
 
 import UIKit
+class AnalyzedFace {
+    var image: UIImage?
+    var gender: String?
+    var genderScore: String?
+    var ageMin: String?
+    var ageMax: String?
+    var ageScore: String?
+    var identity: String?
+}
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,4 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
+
+
+
+
 
