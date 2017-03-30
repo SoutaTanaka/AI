@@ -39,8 +39,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     @IBAction func sendData () {
         callApi(image: selectedimage)
+        self.textView.text = ""
     }
-
+    
     
     //UIImagePickerControllerに関しての記述
     func opencamera(){
@@ -84,7 +85,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
         // API呼び出し準備
-        let APIKey = "ff8f40dcd5890da6de1d06a2667796ce56cb969f" // APIKeyを取得してここに記述
+        let APIKey = "0e2b258a7464b736c81feaf313de6f19bd5ced06" // APIKeyを取得してここに記述   捨て垢(yahoo)使用中
         let url = "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=" + APIKey + "&version=2016-05-20"
         guard let destURL = URL(string: url) else {
             print ("url is NG: " + url) // debugF
@@ -137,11 +138,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                         var classes : Dictionary = ["class": String(), "score": Float()] as [String : Any]
                         
                         classes["class"] =  json["images"][0]["classifiers"][0]["classes"][0]["class"].string
-                        self.textView.text = ""
-                        for i in 0...5 {
+                        
+                        for i in 0...20 {
                             
                             let textClasses =  json["images"][0]["classifiers"][0]["classes"][i]["class"].stringValue
                             let textScore = json["images"][0]["classifiers"][0]["classes"][i]["score"].stringValue
+                            if textClasses != "" {
                             self.textView.text  = self.textView.text + "[\(textClasses),\(textScore )],"
                             // self.textView.text  = "[\(textClasses),\(textScore )],"
                             
@@ -150,6 +152,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                             
                             dataStr = classes["class"] as! String?
                             print( " dataStr:\( dataStr)")
+                            }
                             
                         }
                         
@@ -176,16 +179,3 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
-//知能による画像解析アプリ
-
