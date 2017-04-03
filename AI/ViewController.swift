@@ -10,12 +10,13 @@ import UIKit
 import Photos
 import SwiftyJSON
 
-
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     //表示するイメージ
     @IBOutlet var images: UIImageView!
     //テスト用
     @IBOutlet var textView: UITextView!
+    var push: Int = 0
+    
     var selectedimage: UIImage!
     
     override func viewDidLoad() {
@@ -37,9 +38,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func startphoto () {
         opencamera()
     }
+    //データを送る
     @IBAction func sendData () {
         callApi(image: selectedimage)
         self.textView.text = ""
+        push = push + 1
+        if push == 5 {
+            admob()
+            push = 0
+        }
     }
     
     
@@ -144,14 +151,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                             let textClasses =  json["images"][0]["classifiers"][0]["classes"][i]["class"].stringValue
                             let textScore = json["images"][0]["classifiers"][0]["classes"][i]["score"].stringValue
                             if textClasses != "" {
-                            self.textView.text  = self.textView.text + "[\(textClasses),\(textScore )],"
-                            // self.textView.text  = "[\(textClasses),\(textScore )],"
-                            
-                            
-                            print( "classes[class]:\(classes["class"]!)")
-                            
-                            dataStr = classes["class"] as! String?
-                            print( " dataStr:\( dataStr)")
+                                self.textView.text  = self.textView.text + "[\(textClasses),\(textScore )],"
+                                // self.textView.text  = "[\(textClasses),\(textScore )],"
+                                
+                                
+                                print( "classes[class]:\(classes["class"]!)")
+                                
+                                dataStr = classes["class"] as! String?
+                                 print( " dataStr:\( dataStr)")
+                                //print( " dataStr:\(String(describing:  dataStr))")
                             }
                             
                         }
@@ -176,6 +184,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //        }
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    func admob () {
+        print ("Hello worde")
+        
     }
     
 }
